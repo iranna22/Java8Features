@@ -26,6 +26,15 @@ public class OptionalDemo {
             System.out.println(emailOptional.get());
         }
 
+        String defaultOptional = emailOptional.orElse("No value found");
+        System.out.println("email value with orElse method "+" "+ defaultOptional);
+
+        String defaultOptional1 = placeOptional2.orElse("No value found");
+        System.out.println("null value with orElse method"+" "+ defaultOptional1);
+
+        String s = emailOptional.orElseGet(() -> "No value found");
+        System.out.println("with orElseGet"+" "+s);
+
 
         Optional<String> placeOptional = Optional.ofNullable(place);
         if(placeOptional.isPresent()){
@@ -34,5 +43,6 @@ public class OptionalDemo {
             System.out.println("No value found");
             //System.out.println(placeOptional);
         }
+
     }
 }
